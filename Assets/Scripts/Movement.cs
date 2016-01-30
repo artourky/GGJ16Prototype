@@ -18,5 +18,10 @@ public class Movement : MonoBehaviour {
         yAxis = Input.GetAxis("Vertical");
 
         _rigidB.velocity = new Vector3(xAxis * moveSpeed, _rigidB.velocity.y, yAxis * moveSpeed);
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            _rigidB.AddForce(new Vector3(0f, moveSpeed), ForceMode.Impulse);
+        }
 	}
 }
