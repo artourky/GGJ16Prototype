@@ -10,6 +10,7 @@ public class Movement : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         _rigidB = GetComponent<Rigidbody>();
+        StartCoroutine(ReEnable());
 	}
 	
 	// Update is called once per frame
@@ -24,4 +25,18 @@ public class Movement : MonoBehaviour {
             _rigidB.AddForce(new Vector3(0f, moveSpeed), ForceMode.Impulse);
         }
 	}
+
+    void OnDisable()
+    {
+        print("disabled sphere");
+    }
+
+    IEnumerator ReEnable()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(1f);
+            print("7aga");
+        }
+    }
 }
