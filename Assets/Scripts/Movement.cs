@@ -17,6 +17,6 @@ public class Movement : MonoBehaviour {
         xAxis = Input.GetAxis("Horizontal");
         yAxis = Input.GetAxis("Vertical");
 
-        _rigidB.velocity = new Vector3(xAxis * moveSpeed, 0f, yAxis * moveSpeed);
+        _rigidB.velocity = new Vector3(xAxis * moveSpeed, _rigidB.velocity.y, yAxis * moveSpeed);
 	}
 }
